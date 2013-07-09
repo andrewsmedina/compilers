@@ -116,6 +116,15 @@ public:
 		: Name(name), Args(args) {}
 };
 
+// FunctionAST - This class represents a function definition itself.
+class FunctionAST {
+	PrototypeAST *Proto;
+	ExprAST *Body;
+public:
+	FunctionAST(PrototypeAST *proto, ExprAST *body)
+		: Proto(proto), Body(body) {}
+};
+
 int main() {
 	return 0;
 }
