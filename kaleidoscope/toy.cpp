@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <string>
+#include <vector>
 
 enum Token {
 	tok_eof = -1,
@@ -93,6 +94,15 @@ class BinaryExprAST : public ExprAST {
 public:
 	BinaryExprAST(char op, ExprAST *lhs, ExprAST *rhs)
 		: Op(op), LHS(lhs), RHS(rhs) {}
+};
+
+// CallExprAST - Expression class for function calls.
+class CallExprAST : public ExprAST {
+	std::string Callee;
+	std::vector<ExprAST*> Args;
+public:
+	CallExprAST(const std::string &callee, std::vector<ExprAST*> &args)
+		: Callee(callee), Args(args) {}
 };
 
 int main() {
