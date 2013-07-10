@@ -36,5 +36,5 @@ nosetests.xml
 
 *.sw[a-z]
 
-*.out.*
-*.out
+kaleidoscope/toy
+kaleidoscope/toy.dSYM
