@@ -145,6 +145,20 @@ static ExprAST *ParseNumberExpr() {
 	return Result;
 }
 
+// parenexpr ::= '(' expression ')'
+static ExprAST *ParseParenExpr() {
+	getNextToken();  // eat (.
+	ExprAST *V = ParseExpression();
+	if (!V) {
+		return 0;
+	}
+	if (CurTok != ')') {
+		return Error("expected ')'");
+	}
+	getNextToken();  // eat ).
+	return V;
+}
+
 int main() {
 	return 0;
 }
