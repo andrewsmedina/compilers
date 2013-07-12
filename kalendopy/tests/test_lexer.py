@@ -55,3 +55,18 @@ def test_name():
     token = result.next()
     assert "age" == token.value
     assert "NAME" == token.name
+
+
+def test_ignore_spaces():
+    result = lexer.lex("age = 10")
+    token = result.next()
+    assert "age" == token.value
+    assert "NAME" == token.name
+
+    token = result.next()
+    assert "=" == token.value
+    assert "EQUAL" == token.name
+
+    token = result.next()
+    assert "10" == token.value
+    assert "NUMBER" == token.name
