@@ -48,3 +48,10 @@ def test_numer():
     token = result.next()
     assert "42" == token.value
     assert "NUMBER" == token.name
+
+
+def test_name():
+    result = lexer.lex("age")
+    token = result.next()
+    assert "age" == token.value
+    assert "NAME" == token.name
