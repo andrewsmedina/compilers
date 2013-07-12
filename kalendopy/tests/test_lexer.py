@@ -27,3 +27,10 @@ def test_def():
     token = result.next()
     assert "def" == token.value
     assert "DEF" == token.name
+
+
+def test_lparen():
+    result = lexer.lex("(")
+    token = result.next()
+    assert "(" == token.value
+    assert "LPAREN" == token.name
