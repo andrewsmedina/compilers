@@ -43,7 +43,7 @@ def test_rparen():
     assert "RPAREN" == token.name
 
 
-def test_numer():
+def test_number():
     result = lexer.lex("42")
     token = result.next()
     assert "42" == token.value
