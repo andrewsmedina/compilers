@@ -6,3 +6,10 @@ def test_equal():
     token = result.next()
     assert "=" == token.value
     assert "EQUAL" == token.name
+
+
+def test_plus():
+    result = lexer.lex("+")
+    token = result.next()
+    assert "+" == token.value
+    assert "PLUS" == token.name
