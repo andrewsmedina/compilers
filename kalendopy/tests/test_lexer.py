@@ -14,8 +14,16 @@ def test_plus():
     assert "+" == token.value
     assert "PLUS" == token.name
 
+
 def test_minus():
     result = lexer.lex("-")
     token = result.next()
     assert "-" == token.value
     assert "MINUS" == token.name
+
+
+def test_def():
+    result = lexer.lex("def")
+    token = result.next()
+    assert "def" == token.value
+    assert "DEF" == token.name
