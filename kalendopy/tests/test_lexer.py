@@ -34,3 +34,10 @@ def test_lparen():
     token = result.next()
     assert "(" == token.value
     assert "LPAREN" == token.name
+
+
+def test_rparen():
+    result = lexer.lex(")")
+    token = result.next()
+    assert ")" == token.value
+    assert "RPAREN" == token.name
