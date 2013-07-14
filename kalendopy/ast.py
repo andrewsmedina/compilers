@@ -19,6 +19,6 @@ class Statement(Node):
         self.expr = expr
 
 
-class Node(Node):
+class Number(Node):
     def __init__(self, value):
         self.value = value
