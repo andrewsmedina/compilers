@@ -1,4 +1,4 @@
-from toy import lexer
+from lexer import lexer
 
 
 def test_equal():
