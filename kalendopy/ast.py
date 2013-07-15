@@ -8,6 +8,9 @@ class Node(object):
     def __ne__(self, other):
         return not (self == other)
 
+    def compile(self, ctx):
+        raise NotImplementedError
+
 
 class Block(Node):
     def __init__(self, statements):
