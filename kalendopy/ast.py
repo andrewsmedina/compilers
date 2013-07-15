@@ -13,8 +13,15 @@ class Node(object):
 
 
 class Block(Node):
+    """
+    a list of statements.
+    """
     def __init__(self, statements):
         self.statements = statements
+
+    def compile(self, ctx):
+        for statement in self.statements:
+            statement.compile(ctx)
 
 
 class Statement(Node):
