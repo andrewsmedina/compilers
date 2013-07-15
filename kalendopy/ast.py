@@ -28,6 +28,9 @@ class Statement(Node):
     def __init__(self, expr):
         self.expr = expr
 
+    def compile(self, ctx):
+        self.expr.compile(ctx)
+
 
 class Number(Node):
     def __init__(self, value):
