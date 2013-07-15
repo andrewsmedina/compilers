@@ -35,3 +35,6 @@ class Statement(Node):
 class Number(Node):
     def __init__(self, value):
         self.value = value
+
+    def compile(self, ctx):
+        ctx.emit(bytecode.LOAD_CONSTANT, ctx.create_number(self.value))
